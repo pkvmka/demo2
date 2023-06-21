@@ -1,0 +1,639 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <!-- Theme Made By www.w3schools.com -->
+  <title>ssmfins</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+  <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet" type="text/css">
+  <link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet" type="text/css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+  <script src="https://kit.fontawesome.com/c4254e24a8.js" crossorigin="anonymous"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <style>
+  body {
+    font: 400 15px Lato, sans-serif;
+    line-height: 1.8;
+    color: #818181;
+  }
+  h2 {
+    font-size: 24px;
+    text-transform: uppercase;
+    color: #303030;
+    font-weight: 600;
+    margin-bottom: 30px;
+  }
+  h4 {
+    font-size: 19px;
+    line-height: 1.375em;
+    color: #303030;
+    font-weight: 400;
+    margin-bottom: 30px;
+  }  
+  .jumbotron {
+    
+    color: #fff;
+    padding: 100px 50px;
+    font-family: Montserrat, sans-serif;
+    background-color: white;
+    margin-bottom: -50px;
+  }
+  .container-fluid {
+    padding: 60px 50px;
+  }
+  .bg-grey {
+    background-color: #f6f6f6;
+  }
+  .logo-small {
+    color: #808080;
+    font-size: 50px;
+  }
+  .logo img {
+    
+    width: 80px;
+    height: 80px;
+    margin-left:-20%;
+  }
+  .logo , h5{
+    display: inline;
+  }
+  .thumbnail {
+   
+    border: none;
+    border-radius: 0;
+  }
+  .thumbnail img {
+    width: 50%;
+    height: 75%;
+    margin-bottom: 10px;
+  }
+  .carousel-control.right, .carousel-control.left {
+    background-image: none;
+    color:#808080 ;
+  }
+  .carousel-indicators li {
+    border-color:#808080;
+  }
+  .carousel-indicators li.active {
+    background-color:#808080;
+  }
+  .item h4 {
+    font-size: 19px;
+    line-height: 1.375em;
+    font-weight: 400;
+    font-style: italic;
+    margin: 70px 0;
+  }
+  .item span {
+    font-style: normal;
+  }
+  .panel {
+    border: 1px solid #808080; 
+    border-radius:0 !important;
+    transition: box-shadow 0.5s;
+  }
+  .panel:hover {
+    box-shadow: 5px 0px 40px rgba(0,0,0, .2);
+  }
+  .panel-footer .btn:hover {
+    border: 1px solid #808080;
+    background-color: #fff !important;
+    color:#808080;
+  }
+  .panel-heading {
+    color: #fff !important;
+    background-color: #808080 !important;
+    padding: 25px;
+    border-bottom: 1px solid transparent;
+    border-top-left-radius: 0px;
+    border-top-right-radius: 0px;
+    border-bottom-left-radius: 0px;
+    border-bottom-right-radius: 0px;
+  }
+  .panel-footer {
+    background-color: white !important;
+  }
+  .panel-footer h3 {
+    font-size: 32px;
+  }
+  .panel-footer h4 {
+    color: #aaa;
+    font-size: 14px;
+  }
+  .panel-footer .btn {
+    margin: 15px 0;
+    background-color: #808080;
+    color: #fff;
+  }
+  .navbar {
+    margin-bottom: 0;
+    background-color: #808080;
+    z-index: 9999;
+    border: 0;
+    font-size: 12px !important;
+    line-height: 1.42857143 !important;
+    letter-spacing: 4px;
+    border-radius: 0;
+    font-family: Montserrat, sans-serif;
+  }
+  .navbar li a, .navbar .navbar-brand {
+    color: #fff !important;
+  }
+  .navbar-nav li a:hover, .navbar-nav li.active a {
+    color: #808080 !important;
+    background-color: #fff !important;
+  }
+  .navbar-default .navbar-toggle {
+    border-color: transparent;
+    color: #fff !important;
+  }
+  footer .glyphicon {
+    font-size: 20px;
+    margin-bottom: 20px;
+    color:#808080;
+  }
+  .slideanim {visibility:hidden;}
+  .slide {
+    animation-name: slide;
+    -webkit-animation-name: slide;
+    animation-duration: 1s;
+    -webkit-animation-duration: 1s;
+    visibility: visible;
+  }
+  .fa {
+  padding: 15px;
+  font-size: 20px;
+  width: 50px;
+  text-align: center;
+  text-decoration: none;
+  margin: 5px 2px;
+   border-radius: 50%;
+}
+
+.fa:hover {
+    opacity: 0.7;
+}
+
+.fa-facebook {
+  background: #3B5998;
+  color: white;
+}
+
+.fa-twitter {
+  background: #55ACEE;
+  color: white;
+}
+
+
+
+.fa-linkedin {
+  background: #007bb5;
+  color: white;
+}
+
+.fa-youtube {
+  background: #bb0000;
+  color: white;
+}
+
+.fa-instagram {
+  background: #125688;
+  color: white;
+}
+
+a{
+    color:white
+}
+  @keyframes slide {
+    0% {
+      opacity: 0;
+      transform: translateY(70%);
+    } 
+    100% {
+      opacity: 1;
+      transform: translateY(0%);
+    }
+  }
+  @-webkit-keyframes slide {
+    0% {
+      opacity: 0;
+      -webkit-transform: translateY(70%);
+    } 
+    100% {
+      opacity: 1;
+      -webkit-transform: translateY(0%);
+    }
+  }
+  @media screen and (max-width: 768px) {
+    .col-sm-4 {
+      text-align: center;
+      margin: 25px 0;
+    }
+    .btn-lg {
+      width: 100%;
+      margin-bottom: 35px;
+    }
+  }
+  @media screen and (max-width: 480px) {
+    .logo {
+      font-size: 150px;
+    }
+  }
+  </style>
+</head>
+<body id="myPage" data-spy="scroll" data-target=".navbar" data-offset="60">
+
+<nav class="navbar navbar-default navbar-fixed-top">
+  <div class="container">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>                        
+      </button>
+    <!--<a class="navbar-brand" href="#myPage">Logo</a> -->
+    <span class="logo"><img src="images/logo.png"></span>
+    <strong style="color:white; font-style:Times New Roman; font: size 500;">SHIVA SOLUTIONS MAHADEV PVT LTD</strong>
+   
+    </div>
+    <div class="collapse navbar-collapse" id="myNavbar">
+      <ul class="nav navbar-nav navbar-right">
+        <li><a href="#about">ABOUT</a></li>
+        <li><a href="#services">SERVICES</a></li>
+        <li><a href="#ourteam">OUR TEAM</a></li>
+        <li><a href="#pricing">BRANCHES</a></li>
+        <li><a href="#contact">CONTACT</a></li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+<div class="jumbotron text-center">
+   
+        <div id="myCarousel" class="carousel slide" data-ride="carousel">
+              <!-- Indicators -->
+              <ol class="carousel-indicators">
+                <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+                <li data-target="#myCarousel" data-slide-to="1"></li>
+                <li data-target="#myCarousel" data-slide-to="2"></li>
+              </ol>
+        
+            <!-- Wrapper for slides -->
+            <div class="carousel-inner">
+              <div class="item active">
+                <img src="images/loan.jpg" alt="Loans" style="width:100% ; height:500px;">
+              </div>
+        
+              <div class="item"> 
+                <img src="images/insurance.jpg" alt="Insurance" style="width:100%; height:500px;">
+              </div>
+            
+              <div class="item">
+                <img src="images/realestate.jpg" alt="Realestate" style="width:100%; height:500px;">
+              </div>
+            </div>
+            <a class="left carousel-control" href="#myCarousel" data-slide="prev">
+                <span class="glyphicon glyphicon-chevron-left"></span>
+                <span class="sr-only">Previous</span>
+              </a>
+              <a class="right carousel-control" href="#myCarousel" data-slide="next">
+                <span class="glyphicon glyphicon-chevron-right"></span>
+                <span class="sr-only">Next</span>
+              </a>
+            
+        </div>
+       
+</div>
+
+<!-- Container (About Section) -->
+<div id="about" class="container-fluid">
+  <div class="row">
+    <div class="col-sm-8">
+      <h1 align="center">ABOUT US</h1>
+      <h2>Our Mission</h2><br>
+      <!--<h4>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</h4><br> -->
+      <p>We are committed to provide the best banking services possible for the financial security of our clients and shareholders.</p>   
+    </div>
+    <div class="col-sm-4">
+      <span class="glyphicon glyphicon-signal logo"></span>
+    </div>
+  </div>
+</div>
+
+<!--<div class="container-fluid bg-grey">
+  <div class="row">
+    <div class="col-sm-4">
+      <span class="glyphicon glyphicon-globe logo slideanim"></span>
+    </div>
+    <div class="col-sm-8">
+      
+       </div>
+  </div>
+</div>-->
+
+<!-- Container (Services Section) -->
+<div id="services" class="container-fluid text-center">
+  <h2>SERVICES</h2>
+  <h4>What we offer</h4>
+  <br>
+  <div class="row slideanim">
+    <div class="col-sm-4">
+       <span class="logo-small"><i class="fa-solid fa-sack-dollar"></i></span> 
+      <h4>LOANS</h4>
+      
+    </div>
+    <div class="col-sm-4">
+        <span class="logo-small"><i class="fa-solid fa-hands-holding-circle"></i></span>
+      <h4>INSURANCE</h4>
+      
+  </div>
+    <div class="col-sm-4">
+        <span class="logo-small"><i class="fa-solid fa-city"></i></span>
+      <h4>REALESTATE</h4>
+      
+    </div>
+  </div>
+   <!-- <br><br>
+  <div class="row slideanim">
+    <div class="col-sm-4">
+      <span class="glyphicon glyphicon-leaf logo-small"></span>
+      <h4>GREEN</h4>
+      <p>Lorem ipsum dolor sit amet..</p>
+    </div>
+    <div class="col-sm-4">
+      <span class="glyphicon glyphicon-certificate logo-small"></span>
+      <h4>CERTIFIED</h4>
+      <p>Lorem ipsum dolor sit amet..</p>
+    </div>
+    <div class="col-sm-4">
+      <span class="glyphicon glyphicon-wrench logo-small"></span>
+      <h4 style="color:#303030;">HARD WORK</h4>
+      <p>Lorem ipsum dolor sit amet..</p>
+    </div>
+  </div>
+</div> -->
+
+<!-- Container (ourteam section) -->
+
+  <div id="ourteam" class="container-fluid text-center bg-white">
+  <h2>Our Team</h2><br><br>
+  <div class="row text-center slideanim">
+    <div class="col-sm-4">
+      <div class="thumbnail">
+        <img src="images/Chair Person 2.png" alt="Paris" >
+        <p><strong>Harika</strong></p>
+        <p>Chair Person</p>
+      </div>
+    </div>
+    <div class="col-sm-4">
+      <div class="thumbnail">
+        <img src="images/HR.png" alt="New York" >
+        <p><strong>Seema Sultana</strong></p>
+        <p>HR Manager</p>
+      </div>
+    </div>
+    <div class="col-sm-4">
+      <div class="thumbnail">
+        <img src="images/Relationaship_Manager_1.png" alt="San Francisco" >
+        <p><strong>Rama Raju</strong></p>
+        <p>Relation Ship Manager</p>
+      </div>
+    </div>
+   </div>
+  </div>
+
+  
+    
+    <div class="row text-center slideanim">
+      <div class="col-sm-4">
+        <div class="thumbnail">
+          <img src="images/Relationship__Manager__2.png" alt="Paris" >
+          <p><strong>Raghupathi</strong></p>
+          <p>Relation Ship Manager</p>
+        </div>
+      </div>
+      <div class="col-sm-4">
+        <div class="thumbnail">
+          <img src="images/HR.png" alt="New York" >
+          <p><strong>Seema Sultana</strong></p>
+          <p>HR Manager</p>
+        </div>
+      </div>
+      <div class="col-sm-4">
+        <div class="thumbnail">
+          <img src="images/Relationaship_Manager_1.png" alt="San Francisco" >
+          <p><strong>Rama Raju</strong></p>
+          <p>Relation Ship Manager</p>
+        </div>
+      </div>
+     </div>
+    
+      
+
+  <div id="our partners" class="container-fluid text-center bg-grey">
+  <h2>our partners</h2>
+  <div id="myCarousel" class="carousel slide text-center" data-ride="carousel">
+    <!-- Indicators -->
+   <!-- <ol class="carousel-indicators">
+      <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+      <li data-target="#myCarousel" data-slide-to="1"></li>
+      <li data-target="#myCarousel" data-slide-to="2"></li>
+      <li data-target="#myCarousel" data-slide-to="3"></li>
+      <li data-target="#myCarousel" data-slide-to="4"></li>
+      <li data-target="#myCarousel" data-slide-to="5"></li>
+      <li data-target="#myCarousel" data-slide-to="6"></li>
+      <li data-target="#myCarousel" data-slide-to="7"></li>
+      <li data-target="#myCarousel" data-slide-to="8"></li>
+      <li data-target="#myCarousel" data-slide-to="9"></li>
+      <li data-target="#myCarousel" data-slide-to="10"></li>
+      <li data-target="#myCarousel" data-slide-to="11"></li>
+      <li data-target="#myCarousel" data-slide-to="12"></li>
+    </ol> -->
+
+    <!-- Wrapper for slides -->
+    <div class="carousel-inner" role="listbox">
+      <div class="item active">
+        <h4>HDFC</h4>
+      </div>
+      <div class="item">
+        <h4>ICICI</h4>
+      </div>
+      <div class="item">
+        <h4>AXIS BANK</h4>
+      </div>
+      <div class="item">
+        <h4>YES BANK</h4>
+      </div>
+      <div class="item">
+        <h4>SBI</h4>
+      </div>
+      <div class="item">
+        <h4>INDUSLAND</h4>
+      </div>
+      <div class="item">
+        <h4>PIRAMAL</h4>
+      </div>
+      <div class="item">
+        <h4>INCREED</h4>
+      </div>
+      <div class="item">
+        <h4>KOTAK MAHINDRA</h4>
+      </div>
+      <div class="item">
+        <h4>BAJAJ FINANCE</h4>
+      </div>
+      <div class="item">
+        <h4>MAHINDRA AND MAHINDRA</h4>
+      </div>
+      <div class="item">
+        <h4>ADITYA BIRLLA</h4>
+      </div>
+    </div>
+
+    <!-- Left and right controls -->
+    <a class="left carousel-control" href="#myCarousel" role="button" data-slide="prev">
+      <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
+      <span class="sr-only">Previous</span>
+    </a>
+    <a class="right carousel-control" href="#myCarousel" role="button" data-slide="next">
+      <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+      <span class="sr-only">Next</span>
+    </a>
+  </div>
+</div>
+
+<!-- Container (Pricing Section) -->
+<div id="pricing" class="container-fluid">
+  <div class="text-center">
+    <h2>Branches</h2>
+    
+  </div>
+  <div class="row slideanim">
+    <div class="col-sm-4 col-xs-12">
+      <div class="panel panel-default text-center">
+        <div class="panel-heading">
+          <h1>Suchitra</h1>
+          
+      <p><span class="glyphicon glyphicon-map-marker"></span><a href="https://www.google.com/maps/place/17%C2%B029'59.3%22N+78%C2%B028'28.4%22E/@17.4997932,78.4723713,17z/data=!4m4!3m3!8m2!3d17.4997932!4d78.47456?hl=en&entry=ttu"> Plot no-95,venkateswara Enclave,Suchitra,
+        Hyderabad</a></p>
+      <p><span class="glyphicon glyphicon-phone"></span> +91 7799509883</p>
+      <p><span class="glyphicon glyphicon-envelope"></span><a href="mailto:hr@ssmfins.com"> hr@ssmfins.com</a></p>
+        </div>
+      
+      
+      </div>      
+    </div>     
+    <div class="col-sm-4 col-xs-12">
+      <div class="panel panel-default text-center">
+        <div class="panel-heading">
+          <h1>SR Nagar</h1>
+
+          <p><span class="glyphicon glyphicon-map-marker"></span><a href="https://www.google.com/maps/place//@17.5095884,78.4857722,14z/data=!3m1!4b1?entry=ttu"> Flat No-211,B-block 2nd floor,amriest buliding,
+            SR nagar,Hyderabad</a></p>
+      <p><span class="glyphicon glyphicon-phone"></span> +91 7799509883</p>
+      <p><span class="glyphicon glyphicon-envelope"></span><a href="mailto:hr@ssmfins.com"> hr@ssmfins.com</a></p>
+      
+
+          
+        </div>
+       
+      </div>      
+    </div>       
+    <div class="col-sm-4 col-xs-12">
+      <div class="panel panel-default text-center">
+        <div class="panel-heading">
+          <h1>Boduppal</h1>
+        
+        <p><span class="glyphicon glyphicon-map-marker"></span><a href="https://www.google.com/maps/place//@17.5095884,78.4857722,14z/data=!3m1!4b1?entry=ttu"> 9-43-/2 Sri ram nagar colony peerzadiguda,Boduppal,Hyderabad</a></p>
+        <p><span class="glyphicon glyphicon-phone"></span> +91 7799509883</p>
+        <p><span class="glyphicon glyphicon-envelope"></span><a href="mailto:hr@ssmfins.com"> hr@ssmfins.com</a></p>
+      </div>
+      </div>      
+    </div>    
+  </div>
+</div>
+
+<!-- Container (Contact Section) -->
+<div id="contact" class="container-fluid bg-grey">
+  <h2 class="text-center">CONTACT</h2>
+  <div class="row">
+    <div class="col-sm-5">
+      <p>Contact us and we'll get back to you within 24 hours.</p>
+      <p><span class="glyphicon glyphicon-map-marker"></span><a  href="https://www.google.com/maps/place/17%C2%B029'59.3%22N+78%C2%B028'28.4%22E/@17.4997932,78.4723713,17z/data=!4m4!3m3!8m2!3d17.4997932!4d78.47456?hl=en&entry=ttu" style="color: blue;"> Plot no-95,venkateswara Enclave,Suchitra,Hyderabad</a></p>
+      <p><span class="glyphicon glyphicon-phone"></span> +91 7799509883</p>
+      <p><span class="glyphicon glyphicon-envelope"></span><a href="mailto:hr@ssmfins.com" style="color: blue;"> hr@ssmfins.com</a></p>
+    </div>
+    <div class="col-sm-7 slideanim">
+      <div class="row">
+        <div class="col-sm-6 form-group">
+          <input class="form-control" id="name" name="name" placeholder="Name" type="text" required>
+        </div>
+        <div class="col-sm-6 form-group">
+          <input class="form-control" id="email" name="email" placeholder="Email" type="email" required>
+        </div>
+      </div>
+      <textarea class="form-control" id="comments" name="comments" placeholder="Comment" rows="5"></textarea><br>
+      <div class="row">
+        <div class="col-sm-12 form-group">
+          <button class="btn btn-default pull-right" type="submit">Send</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Image of location/map -->
+
+
+<footer class="container-fluid text-center">
+  <a href="#myPage" title="To Top">
+    <span class="glyphicon glyphicon-chevron-up"></span>
+  </a>
+  <a href="https://www.facebook.com/Shivasolutionsmahadevpvtltd" class="fa fa-facebook"></a>
+  <a href="https://twitter.com/shivapvt357151" class="fa fa-twitter"></a>
+  
+  <a href="https://www.youtube.com/@ShivaSolutionsMahadev" class="fa fa-youtube"></a>
+  <a href="https://www.instagram.com/shivasolutionsmahadevpvtltd/" class="fa fa-instagram"></a>
+</footer>
+
+<script>
+$(document).ready(function(){
+  // Add smooth scrolling to all links in navbar + footer link
+  $(".navbar a, footer a[href='#myPage']").on('click', function(event) {
+    // Make sure this.hash has a value before overriding default behavior
+    if (this.hash !== "") {
+      // Prevent default anchor click behavior
+      event.preventDefault();
+
+      // Store hash
+      var hash = this.hash;
+
+      // Using jQuery's animate() method to add smooth page scroll
+      // The optional number (900) specifies the number of milliseconds it takes to scroll to the specified area
+      $('html, body').animate({
+        scrollTop: $(hash).offset().top
+      }, 900, function(){
+   
+        // Add hash (#) to URL when done scrolling (default click behavior)
+        window.location.hash = hash;
+      });
+    } // End if
+  });
+  
+  $(window).scroll(function() {
+    $(".slideanim").each(function(){
+      var pos = $(this).offset().top;
+
+      var winTop = $(window).scrollTop();
+        if (pos < winTop + 600) {
+          $(this).addClass("slide");
+        }
+    });
+  });
+})
+</script>
+
+</body>
+</html>
